@@ -6,6 +6,7 @@ message Add {
     queryId: Int as uint64;
     amount: Int as uint32;
 }
+// чтобы проверить хозяина контракта и запретить доступ в случае чего
 trait Ownable {
     owner: Address;
 
@@ -21,6 +22,8 @@ trait Ownable {
 message ChangeOwner {
     newOwner: Address;
 }
+// чтобы проверить хозяина контракта и запретить доступ в случае чего
+// а также, чтобы изменить хозяина этого контракта
 trait OwnableTransferable with Ownable {
     owner: Address;
 
